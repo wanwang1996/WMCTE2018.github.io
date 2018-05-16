@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>酒店地图</title>
+
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #DCDCDC;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ 元素/标签选择器 ~~ */
+ul, ol, dl { /* 由于浏览器之间的差异，最佳做法是在列表中将填充和边距都设置为零。为了保持一致，您可以在此处指定需要的数值，也可以在列表所包含的列表项（LI、DT 和 DD）中指定需要的数值。请注意，除非编写一个更为具体的选择器，否则您在此处进行的设置将会层叠到 .nav 列表。 */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 10px;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
+	margin-bottom: 5px;
+	padding-right: 15px;
+	padding-left: 10px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+/* ~~ 站点链接的样式必须保持此顺序，包括用于创建悬停效果的选择器组在内。 ~~ */
+a:link {
+	color: #000000;
+	text-decoration: none; /* 除非将链接设置成极为独特的外观样式，否则最好提供下划线，以便可从视觉上快速识别 */
+}
+a:visited {
+	color: #000000;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠标使用者相同的悬停体验。 */
+	text-decoration: none;
+}
+
+/* ~~ 此固定宽度容器包含其它 div ~~ */
+.container {
+	width: 960px;
+	background-color: #FFF;
+	margin: 0 auto; /* 侧边的自动值与宽度结合使用，可以将布局居中对齐 */
+}
+
+/* ~~ 标题未指定宽度。它将扩展到布局的完整宽度。标题包含一个图像占位符，该占位符应替换为您自己的链接徽标 ~~ */
+.header {
+	background-color: #ADB96E;
+}
+
+/* ~~ 这是布局信息。 ~~ 
+
+1) 填充只会放置于 div 的顶部和/或底部。此 div 中的元素侧边会有填充。这样，您可以避免使用任何“方框模型数学”。请注意，如果向 div 自身添加任何侧边填充或边框，这些侧边填充或边框将与您定义的宽度相加，得出 *总计* 宽度。您也可以选择删除 div 中的元素的填充，并在该元素中另外放置一个没有任何宽度但具有设计所需填充的 div。
+
+*/
+
+.content {
+	padding: 1px 0;
+}
+
+.MenuBarHorizontal {
+    height: 80px;
+	margin: 0 auto;
+}
+.MenuBarHorizontal li.current a{  
+background: #2A9F55;
+}
+
+.text {
+	padding: 0px 30px 10px 20px;
+	line-height: 28px;
+	margin-left: 20px;
+}
+.text1{
+	padding: 30px 30px 10px 20px;
+	margin-left: 20px;
+}
+.foot {
+	margin-top: 0px;
+	margin-bottom: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+	line-height: 23px;
+}
+
+.w1{
+	width:200px;
+	height:200px;
+	}
+
+.footer {
+	padding: 10px 0;
+	background-color:rgb(77,169,71);
+	font-size: 12px;
+}
+
+/* ~~ 其它浮动/清除类 ~~ */
+.fltrt {  /* 此类可用于在页面中使元素向右浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* 此类可用于在页面中使元素向左浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* 如果从 #container 中删除或移出了 #footer，则可以将此类放置在 <br /> 或空 div 中，作为 #container 内最后一个浮动 div 之后的最终元素 */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style>
+
+<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="logo.png" name="Insert_logo" width="961" height="202" id="Insert_logo" style="background-color: #C6D580; display:block;" /></a> 
+    <!-- end .header --></div>
+<div class="content">
+<ul id="MenuBar1" class="MenuBarHorizontal">
+      <li>
+        <div align="center"><a href="index.html">首页</a></div>
+      </li>
+      <li>
+        <div align="center"><a href="news.html">会议动态</a></div>
+      </li>
+      <li>
+        <div align="center"><a href="speakers.html">特邀报告</a></div>
+      </li>
+      <li >
+        <div align="center"><a href="register.html">参会注册</a></div>
+      </li>
+      <li class="current">
+        <div align="center"><a href="map.html">酒店交通</a></div>
+      </li>
+      <li>
+        <div align="center"><a href="contact.html">联系我们</a></div>
+      </li>
+    </ul>
+    
+
+  <!--引用百度地图API--><script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+  </body>
+  
+  <body>
+<div class="text" align="center"> <p><font color="#028B24">会议地址：南京市玄武区进香河路38号 榴园宾馆 宾馆电话：025-83680600</font></p><p>&nbsp;</p></div>
+
+
+<!--百度地图容器-->
+<div align="center" style="width: 480px; height: 360px; border: #ccc solid 1px; margin-left: auto; margin-right: auto;" id="dituContent"></div>
+</body>
+
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(118.798854,32.061948);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_SMALL});
+	map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"榴园宾馆",content:"南京市玄武区进香河路33号",point:"118.797902|32.062178",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+
+<div class="text">
+<div class="text1">
+<h3>南京禄口国际机场－榴园宾馆，45km</h3>
+<li>地铁S1号线（禄口机场站上车，南京南站下车），换乘地铁3号线（南京南站上车，鸡鸣寺站下车），步行800米到榴园宾馆；耗时1小时40分钟；</li>
+<li>机场巴士1号线（禄口机场站上车，秦虹站下车），换乘公交26路（秦虹站上车，进香河路下车），步行100米到榴园宾馆；耗时2小时30分钟；</li>
+<li>出租车，费用120-140元；耗时1小时。</li>
+</div>
+
+<div class="text">
+<h3>南京南站－榴园宾馆，12km</h3>
+<li>地铁1号线（南京南站上车，珠江路站下车），步行1200米到榴园宾馆；耗时45分钟；</li>
+<li>地铁3号线（南京南站上车，鸡鸣寺站下车），步行800米到榴园宾馆；耗时40分钟；</li>
+<li>出租车，费用30-35元；耗时25分钟。</li>
+</div>
+
+<div class="text">
+<h3>南京站－榴园宾馆，7km</h3>
+<li>地铁3号线（南京站上车，鸡鸣寺站下车），步行800米到榴园宾馆；耗时30分钟；</li>
+<li>出租车，费用20元；耗时20分钟。</li>
+</div>
+</div>
+ <div class="footer">
+   <p class="foot" align="center">微流控芯片与组织工程研讨会 <br>
+     Workshop  on Microfluidic Chip and Tissue Engineering (WMCTE 2018)</p>
+   <p class="foot" align="center">主办单位：东南大学、美国哥伦比亚大学<br>
+    承办单位：<a href="http://sklb.seu.edu.cn">生物电子学国家重点实验室</a> <a href="http://bme.seu.edu.cn">生物科学与医学工程学院</a></p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+<script type="text/javascript">
+var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+</script>
+</body>
+</html>
